@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySchool</title>
+    <style>
+        h1{
+            position: absolute;
+            left: 43%;
+            font-size:55px;
+            color:rgb(12, 102, 102)
+        }
+        #intro{
+            position: absolute;
+            top: 18%;
+            left: 6%;
+            font-size: 35px;
+            color: darkblue;
+        }
+        #box1{
+            position: absolute;
+            opacity: 0;
+            width: 80%;
+            top: -19%;
+            left: 10%;
+            background-color: rgb(242, 142, 251);
+    }
+    #intro1{
+            position: absolute;
+            top: -18%;
+            left: 8.5%;
+            font-size: 35px;
+            color: rgb(7, 105, 81);
+        }
+    #intro2{
+            position: absolute;
+            top: -18%;
+            left: 7.5%;
+            font-size: 35px;
+            color: rgb(3, 87, 66);
+        }
+        #lin{
+            position: absolute;
+            font-size: 15px;
+            top: 90%;
+            left: 2%;
+
+        }
+        button{
+            position: absolute;
+            background-color: rgba(1, 160, 99, 0.377);
+            color: white;
+            width: 10%;
+            height: 7%;
+            top: 78%;
+            left: 45%;
+            font-size: 20px;
+            border: 4px solid black;
+            cursor: pointer;
+        }
+        button:hover{
+            box-shadow: 6px 6px 23px 23px rgb(126, 246, 210);
+        }
+    </style>
+</head>
+<body style="background-color: rgb(151, 214, 214);">
+  <div id="text"><h1>My School</h1>
+  <div id="box1"><p id="intro">Hey there !! I am from Ryan international school Sanpada and a proud ryanite and today I am going to tell a few things about my school.</p></div> 
+ <p id="intro1" >1.My school focuses on all-round development rather than just plain studies</p>
+ <p id="intro2" >2.The teachers of my school aim on making the students understand the concept rather than making them by-heart them </p>
+ <a id="lin" href="https://www.ryaninternational.org/RX-IndiaSchools-20-21/">If you ever wish to check about my school pls refer to this link</a>
+</div>
+<button id="button" type="button" onclick="myfunction()">VOICE?</button>
+</body>
+<script>
+    let body = document.querySelector("body");
+    let text = document.getElementById("text")
+    let x = document.getElementById("box1");
+    let y = document.getElementById("intro1");
+    let z = document.getElementById("intro2");
+    window.onload = setTimeout(function(){
+        x.style.transition = "2s";
+        x.style.opacity = 1;
+        x.style.top = "19%";
+    } , 2500);
+    window.onload = setTimeout(function(){
+        y.style.transition = "2s";
+        y.style.opacity = 1;
+        y.style.top = "39%";
+    } , 8500);
+    window.onload = setTimeout(function(){
+        z.style.transition = "5s";
+        z.style.opacity = 1;
+        z.style.top = "51%";
+    } , 14500);
+    window.onload = setInterval(function(){
+       let num = Math.floor(Math.random()*5);
+         if(num = 1){
+              body.style.background = "rgb(151, 214, 214);"
+          }
+    })
+    function myfunction(){
+        let speech = new SpeechSynthesisUtterance();
+    speech.pitch = 100;
+    speech.volume = 2;
+    speech.text = "Hey there !! I am from Ryan international school Sanpada and a proud ryanite and today I am going to tell a few things about my school.                1.My school focuses on all-round development rather than just plain studies.                2.The teachers of my school aim on making the students understand the concept rather than making them by-heart them.";
+    speechSynthesis.speak(speech)
+    }
+</script>
+</html>
